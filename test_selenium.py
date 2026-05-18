@@ -28,10 +28,10 @@ def cookie_elfogadas(driver):
     Ez a függvény elfogadja azt, hogy a tesztek futhassanak.
     """
     try:
-        elfogad_gomb = WebDriverWait(driver, 5).until(
+        Az_összeselfogad_gomb = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, "//button[contains(., 'Accept') or contains(., 'Elfogad')]"))
         )
-        elfogad_gomb.click()
+        Az_összes_elfogadása_gomb.click()
         print("✅ Cookie popup elfogadva!")
     except TimeoutException:
         print("ℹ️ Nem jelent meg cookie popup, folytatás...")
