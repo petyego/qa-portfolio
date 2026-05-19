@@ -15,9 +15,15 @@ Manuális tesztelőként 2+ éves tapasztalattal rendelkezem, és jelenleg aktí
 
 ### 2\. `test\_selenium.py` – Böngészős tesztelés
 
-* **Eszköz:** Python + Selenium WebDriver
-* **Tesztelt oldal:** Google keresés
-* **Lefedett esetek:** Oldal betöltés, keresés funkcionalitás, cím változás ellenőrzése, üres keresés kezelése
+Eszköz: Python + Selenium WebDriver
+Tesztelt oldal: The Internet (https://the-internet.herokuapp.com) – dedikált Selenium gyakorló oldal
+Lefedett esetek:
+
+Főoldal betöltésének ellenőrzése
+Sikeres bejelentkezés helyes adatokkal
+Hibás bejelentkezés (hibaüzenet ellenőrzése)
+Checkbox állapotának ellenőrzése és módosítása
+Kijelentkezés és visszairányítás ellenőrzése
 
 ### 3\. `test\_pytest.py` – Egységtesztelés
 
