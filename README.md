@@ -146,5 +146,5 @@ A tesztek lefedik az alap műveleteket, a hibás bemeneteket és a határérték
 
 \- Email: petyego@gmail.com
 
-\- LinkedIn: \*(hamarosan)\*
+\- LinkedIn: \*(https://www.linkedin.com/in/t%C3%B3th-p%C3%A9ter-050408267/)\*
 
