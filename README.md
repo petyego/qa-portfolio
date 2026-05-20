@@ -1,94 +1,150 @@
-# QA Portfolio – Tóth Péter
+\# QA Portfolio – Tóth Péter
 
-Üdvözlöm! Ez a repository az automatizálási tesztelési projektjeimet tartalmazza.  
-Manuális tesztelőként 2+ éves tapasztalattal rendelkezem, és jelenleg aktívan tanulom a tesztautomatizálást.
 
-\---
 
-## 📁 Projektek
+Manuális tesztelő vagyok 2+ év tapasztalattal, jelenleg aktívan tanulom a tesztautomatizálást. Ez a repository a gyakorlati automatizálási munkáimat tartalmazza.
 
-### 1\. `test\_api.py` – API tesztelés
 
-* **Eszköz:** Python + Requests
-* **Tesztelt API:** JSONPlaceholder (publikus teszt API)
-* **Lefedett esetek:** GET, POST, PUT, DELETE kérések, státuszkód ellenőrzések, 404 hibakezelés
-
-### 2\. `test\_selenium.py` – Böngészős tesztelés
-
-Eszköz: Python + Selenium WebDriver
-Tesztelt oldal: The Internet (https://the-internet.herokuapp.com) – dedikált Selenium gyakorló oldal
-Lefedett esetek:
-
-Főoldal betöltésének ellenőrzése
-Sikeres bejelentkezés helyes adatokkal
-Hibás bejelentkezés (hibaüzenet ellenőrzése)
-Checkbox állapotának ellenőrzése és módosítása
-Kijelentkezés és visszairányítás ellenőrzése
-
-### 3\. `test\_pytest.py` – Egységtesztelés
-
-* **Eszköz:** Python + Pytest
-* **Tesztelt funkció:** Számológép (összeadás, kivonás, szorzás, osztás)
-* **Lefedett esetek:** Alap műveletek, hibakezelés, negatív számok, paraméteres tesztek
 
 \---
 
-## 🛠️ Technikai készségek
 
-|Eszköz|Szint|
-|-|-|
-|Python|Alapszint (tanulás alatt)|
-|Pytest|Alapszint|
-|Selenium WebDriver|Alapszint|
-|API tesztelés (Requests)|Alapszint|
-|JIRA|Tapasztalt|
-|Manuális tesztelés|Tapasztalt (2+ év)|
+
+\## Projektek áttekintése
+
+
+
+\### 1. test\_api.py – REST API tesztelés
+
+
+
+Tesztelt szolgáltatás: JSONPlaceholder – publikus REST API
+
+
+
+| Teszteset | Típus | Elvárt eredmény |
+
+|---|---|---|
+
+| Felhasználó lekérése (GET /users/1) | Pozitív | 200 OK, name és email mező megjelenik |
+
+| Összes felhasználó lekérése (GET /users) | Pozitív | 200 OK, pontosan 10 felhasználó érkezik vissza |
+
+| Új bejegyzés létrehozása (POST /posts) | Pozitív | 201 Created, az új bejegyzés ID-ja megjelenik |
+
+| Bejegyzés frissítése (PUT /posts/1) | Pozitív | 200 OK, a frissített cím visszaérkezik |
+
+| Bejegyzés törlése (DELETE /posts/1) | Pozitív | 200 OK |
+
+| Nem létező erőforrás lekérése (GET /users/9999) | Negatív | 404 Not Found |
+
+
+
+\### 2. test\_selenium.py – UI / böngészős tesztelés
+
+
+
+Tesztelt oldal: \[The Internet](https://the-internet.herokuapp.com) – dedikált Selenium gyakorló oldal
+
+
+
+A tesztek a bejelentkezési folyamat teljes körű ellenőrzését végzik, beleértve a pozitív és negatív eseteket, valamint az oldalelemek állapotának vizsgálatát.
+
+
+
+| Teszteset | Típus | Elvárt eredmény |
+
+|---|---|---|
+
+| Főoldal betöltése | Pozitív | Az oldal betölt, a cím helyes |
+
+| Sikeres bejelentkezés | Pozitív | Sikeres üzenet jelenik meg |
+
+| Hibás jelszóval való bejelentkezés | Negatív | Hibaüzenet jelenik meg |
+
+| Checkbox állapotának módosítása | Pozitív | A checkbox állapota megváltozik |
+
+| Kijelentkezés | Pozitív | Visszairányítás a bejelentkező oldalra |
+
+
+
+\### 3. test\_pytest.py – Egységtesztelés
+
+
+
+Tesztelt funkció: Számológép (összeadás, kivonás, szorzás, osztás)
+
+
+
+A tesztek lefedik az alap műveleteket, a hibás bemeneteket és a határértékeket. Paraméteres tesztekkel több eset egyszerre kerül ellenőrzésre.
+
+
+
+| Teszteset | Típus | Elvárt eredmény |
+
+|---|---|---|
+
+| Alap műveletek (összeadás, kivonás, szorzás, osztás) | Pozitív | Helyes eredmény visszaadva |
+
+| Nullával való osztás | Negatív | ValueError kivétel keletkezik |
+
+| Ismeretlen művelet megadása | Negatív | ValueError kivétel keletkezik |
+
+| Negatív számokkal való szorzás | Határérték | Helyes eredmény visszaadva |
+
+| Paraméteres tesztek (4 eset egyszerre) | Pozitív | Minden eset helyes eredményt ad |
+
+
 
 \---
 
-## 📋 Telepítés és futtatás
 
-### Szükséges telepítések
 
-```bash
-pip install pytest requests selenium pytest-html
-```
+\## Technológiák
 
-### API tesztek futtatása
 
-```bash
-pytest test\_api.py -v
-```
 
-### Selenium tesztek futtatása
+| Eszköz | Szint |
 
-```bash
-pytest test\_selenium.py -v
-```
+|---|---|
 
-### Pytest egységtesztek futtatása
+| Python | Alapszint – jelenleg aktív fejlesztés alatt |
 
-```bash
-pytest test\_pytest.py -v
-```
+| Pytest | Alapszint – jelenleg aktív fejlesztés alatt |
 
-### HTML riport generálása
+| Selenium WebDriver | Alapszint – jelenleg aktív fejlesztés alatt |
 
-```bash
-pytest test\_pytest.py -v --html=riport.html
-```
+| Requests (API tesztelés) | Alapszint – jelenleg aktív fejlesztés alatt |
+
+| JIRA | Tapasztalt – napi szintű használat 2+ éve |
+
+| Manuális tesztelés | Tapasztalt – 2+ év szakmai tapasztalat |
+
+
 
 \---
 
-## 🎓 Képesítések
 
-* ✅ ISTQB Certified Tester Foundation Level (CTFL)
-* 📚 ISTQB AI Testing – folyamatban
+
+\## Képesítések
+
+
+
+\- ISTQB Certified Tester Foundation Level (CTFL)
+
+\- ISTQB AI Testing – folyamatban
+
+
 
 \---
 
-## 📬 Kapcsolat
 
-* **Email:** petyego@gmail.com
-* **LinkedIn:** *(https://www.linkedin.com/in/t%C3%B3th-p%C3%A9ter-050408267/)*
+
+\## Kapcsolat
+
+
+
+\- Email: petyego@gmail.com
+
+\- LinkedIn: \*(hamarosan)\*
 
